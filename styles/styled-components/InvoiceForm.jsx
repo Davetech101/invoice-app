@@ -6,6 +6,7 @@ const SInvoiceForm = styled.main`
 
   .container {
     padding: 0 2.4rem;
+    position:relative;
   }
 
   .back {
@@ -99,6 +100,44 @@ const SInvoiceForm = styled.main`
   .trash{
     font-size:2rem;
     color:#888EB0;
+  }
+
+  .add{
+    display:flex;
+    align-items:center;
+    color:#888EB0;
+    font-size:1.3rem;
+    margin:0 auto 3rem;
+    background:var(--secondary-color);
+    padding:1.5rem 10rem;
+    border-radius:10rem;
+  }
+
+  .btns{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:var(--tetiary-color);
+    width:100%;
+    padding:2rem 2.3rem;
+  }
+
+  .btns button{
+    padding:1rem 2rem;
+    border-radius:5rem;
+    font-size:1.1rem;
+  }
+
+  .discard{
+    background:var(--secondary-color);
+  }
+
+  .draft{
+    background:#373B53;
+  }
+
+  .send{
+    background:#7C5DFA;
   }
 `;
 export default SInvoiceForm;

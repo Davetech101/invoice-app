@@ -10,6 +10,7 @@ const SHeader = styled.header`
   position:sticky;
   top:0;
   left:0;
+  z-index:10;
 
   .left{
     background:#7c5dfa;

@@ -2,6 +2,7 @@
 import SInvoiceForm from "@/styles/styled-components/InvoiceForm";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
+import { HiPlusSm } from "react-icons/hi";
 
 const InvoiceForm = () => {
   return (
@@ -130,8 +131,17 @@ const InvoiceForm = () => {
             </div>
           </div>
 
-          <button>Add New Item</button>
+          <button className="add" type="button">
+            <HiPlusSm /> Add New Item
+          </button>
         </form>
+      </div>
+      <div className="btns">
+        <button className="discard">Discard</button>
+
+        <button className="draft">Save as Draft</button>
+
+        <button className="send">Save & Send</button>
       </div>
     </SInvoiceForm>
   );
