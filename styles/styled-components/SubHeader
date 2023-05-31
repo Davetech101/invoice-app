@@ -1,0 +1,54 @@
+import styled from "styled-components";
+
+const SSubHeader = styled.header`
+  color: var(--primary-text-color);
+  margin: 3.2rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 2.4rem;
+  }
+
+  small{
+    font-size: 1.3rem;
+    font-weight:300;
+    color: var(--secondary-text-color);
+  }
+
+  .right{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+  }
+
+  .filter{
+    display:flex;
+    align-items:center;
+    font-size:1.5rem;
+    gap:1rem;
+  }
+
+  .filter svg{
+    color:#7c5dfa;
+  }
+
+  a{
+    display:flex;
+    align-items:center;
+    background:#7c5dfa;
+    font-size:1.5rem;
+    gap:1rem;
+    border-radius:5rem;
+    padding:.5rem 1rem;
+  }
+
+  .plus{
+    background:var(--primary-text-color);
+    color:#7c5dfa;
+    border-radius:50%;
+  }
+`;
+
+export default SSubHeader;

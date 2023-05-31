@@ -8,6 +8,8 @@ const SHeader = styled.header`
   align-items:center;
   justify-content:space-between;
   position:sticky;
+  top:0;
+  left:0;
 
   .left{
     background:#7c5dfa;
