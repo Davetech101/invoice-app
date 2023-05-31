@@ -53,27 +53,58 @@ const Invoices = () => {
   ];
 
   const invoices = invoicesArray.map((invoice) => {
+    let status = invoice.status;
     return (
       <div key={invoice.id} className="invoice">
         <div className="head">
           <h3>
-            <span className="#" id="">
+            <span className="hash" id="">
               #
             </span>{" "}
             <span>{invoice.id}</span>
           </h3>
 
-          <strong>{invoice.name}</strong>
+          <p>{invoice.name}</p>
         </div>
 
-        <div className="">
+        <div className="btm">
           <div className="left">
             <div className="date">Due {invoice.date}</div>
 
-            <div className="amount">£ {invoice.amount}</div>
+            <div className="amt">£ {invoice.amount}</div>
           </div>
 
-          <div className="status">{invoice.status}</div>
+          <div
+            className="status"
+            style={{
+              color:
+                invoice.status === "paid"
+                  ? "#33D69F"
+                  : invoice.status === "pending"
+                  ? "#FF8F00"
+                  : "#565656",
+
+              background:
+                invoice.status === "paid"
+                  ? "rgb(51 214 159 / 7%)"
+                  : invoice.status === "pending"
+                  ? "rgb(255 143 0 / 7%)"
+                  : "#0000001c",
+            }}
+          >
+            <div
+              className="dot"
+              style={{
+                background:
+                  invoice.status === "paid"
+                    ? "#33D69F"
+                    : invoice.status === "pending"
+                    ? "#FF8F00"
+                    : "#565656",
+              }}
+            ></div>
+            {invoice.status}
+          </div>
         </div>
       </div>
     );
@@ -81,18 +112,22 @@ const Invoices = () => {
 
   return (
     <SInvoice>
-      <div className="noInvoice">
-        <NoInvoice />
+      {invoicesArray.length === 0 ? (
+        <div className="noInvoice">
+          <NoInvoice />
 
-        <div className="txt">
-          <h4>There is nothing here</h4>
+          <div className="txt">
+            <h4>There is nothing here</h4>
 
-          <p>
-            Create an invoiceby clicking the <br /> <span>New</span> button and
-            get started
-          </p>
+            <p>
+              Create an invoiceby clicking the <br /> <span>New</span> button
+              and get started
+            </p>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="invoices">{invoices}</div>
+      )}
     </SInvoice>
   );
 };
