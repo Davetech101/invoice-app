@@ -13,6 +13,7 @@ const SInvoiceForm = styled.main`
     align-items: center;
     gap: 1rem;
     font-size: 1.6rem;
+    font-family:inherit;
   }
 
   .back svg {
@@ -25,12 +26,12 @@ const SInvoiceForm = styled.main`
     font-size: 2.4rem;
   }
 
-  .from {
+  .bill {
     display: flex;
     flex-direction: column;
   }
 
-  .from p {
+  .bill p {
     font-size: 1.5rem;
     color: #7c5dfa;
     margin-bottom: 2rem;
@@ -52,6 +53,18 @@ const SInvoiceForm = styled.main`
     font-size:1.5rem;
     outline:none;
     border:1px solid var(--tetiary-text-color);
+    font-family:inherit;
+    font-weight:400;
+  }
+
+  .zone{
+    display:flex;
+    align-items:center;
+    gap:2.3rem;
+  }
+
+  .to{
+    margin-top:2rem;
   }
 `;
 export default SInvoiceForm;
