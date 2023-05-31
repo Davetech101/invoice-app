@@ -38,10 +38,11 @@ const SInvoiceForm = styled.main`
   }
 
   label {
-    color: var(--tetiary-text-color);
+    color:#888EB0;
     display: block;
     font-size: 1.3rem;
     margin-bottom: 0.9rem;
+    font-family:inherit;
   }
 
   input{
@@ -65,6 +66,39 @@ const SInvoiceForm = styled.main`
 
   .to{
     margin-top:2rem;
+  }
+
+  .itemList{
+    margin:3rem 0 1rem;
+  }
+
+  .math{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
+
+  .qty{
+    width:30%;
+  }
+
+  .total{
+    color:#888EB0;
+    width:50%;
+    padding:0 1rem;
+    font-size:1.5rem;
+    font-family:inherit;
+    font-weight:400;
+    height:9.5rem;
+  }
+
+  .amt{
+    margin-top:2rem;
+  }
+
+  .trash{
+    font-size:2rem;
+    color:#888EB0;
   }
 `;
 export default SInvoiceForm;

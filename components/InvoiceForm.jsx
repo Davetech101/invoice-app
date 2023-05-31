@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import SInvoiceForm from "@/styles/styled-components/InvoiceForm";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { IoMdTrash } from "react-icons/io";
 
 const InvoiceForm = () => {
   return (
@@ -85,8 +86,9 @@ const InvoiceForm = () => {
             </div>
 
             <div className="terms">
-              <label htmlFor="terms">Payment Terms
-              <p>(IN DAYS)</p>
+              <label htmlFor="terms">
+                Payment Terms
+                <p>(IN DAYS)</p>
               </label>
 
               <input type="number" max="30" min="1" id="terms" />
@@ -98,6 +100,37 @@ const InvoiceForm = () => {
               <input type="text" id="description" />
             </div>
           </div>
+
+          <div className="itemList bill">
+            <div className="itName sec">
+              <label htmlFor="itName">Item Name</label>
+
+              <input type="text" id="itName" />
+            </div>
+
+            <div className="math">
+              <div className="qty sec">
+                <label htmlFor="qty">Qty.</label>
+                <input type="text" id="qty" />
+              </div>
+
+              <div className="price sec">
+                <label htmlFor="price">Price</label>
+                <input type="number" id="price" />
+              </div>
+
+              <div className="total sec">
+                <label htmlFor="total">Total</label>
+                <div className="amt">130.00</div>
+              </div>
+
+              <div className="trash">
+                <IoMdTrash />
+              </div>
+            </div>
+          </div>
+
+          <button>Add New Item</button>
         </form>
       </div>
     </SInvoiceForm>
