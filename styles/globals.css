@@ -8,10 +8,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --secondary-color: #252945;
   --primary-color: #0c0e16;
+  --secondary-color: #252945;
+  --tetiary-color: #1e2139;
   --primary-text-color: #f8f8f8f8;
   --secondary-text-color: #dfe3fa;
+  --tetiary-text-color: #867db06f;
+
 }
 
 * {

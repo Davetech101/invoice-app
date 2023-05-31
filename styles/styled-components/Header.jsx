@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SHeader = styled.header`
   width:100%;
   height:7.2rem;
-  background:var(--secondary-color);
+  background:var(--tetiary-color);
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -43,7 +43,7 @@ const SHeader = styled.header`
   }
 
   .toggle{
-    color:#9992b8;
+    color:var(--tetiary-text-color);
     font-size:2rem;
   }
 
