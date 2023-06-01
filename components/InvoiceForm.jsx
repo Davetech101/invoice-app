@@ -1,10 +1,32 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
 import SInvoiceForm from "@/styles/styled-components/InvoiceForm";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
 import { HiPlusSm } from "react-icons/hi";
 
 const InvoiceForm = () => {
+  const [formData, setFormData] = useState({
+      streetAddress: "",
+      city: "",
+      postalCode: "",
+      country: "",
+      clName: "",
+      clEmail: "",
+      clAddress: "",
+      clCity: "",
+      clPostalCode: "",
+      clCountry: "",
+      invoiceDate: "",
+      paymentTerms: "",
+      desc: "",
+      items: {
+        itemName: "",
+        qty: "",
+        amt: "",
+        total: "",
+      }
+  });
   return (
     <SInvoiceForm>
       <div className="container">
@@ -96,7 +118,7 @@ const InvoiceForm = () => {
             </div>
 
             <div className="proDesc">
-              <label htmlFor="description">Project Description</label>
+              <label htmlFor="description">Project / Description</label>
 
               <input type="text" id="description" />
             </div>
