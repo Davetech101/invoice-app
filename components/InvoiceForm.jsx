@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import SInvoiceForm from "@/styles/styled-components/InvoiceForm";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
@@ -20,13 +20,20 @@ const InvoiceForm = () => {
       invoiceDate: "",
       paymentTerms: "",
       desc: "",
-      items: {
-        itemName: "",
-        qty: "",
-        amt: "",
-        total: "",
-      }
+      itName:"",
+      qty: "",
+      price: "",
+      amt: "",
   });
+
+  const onChange = useCallback(
+    (e) => {
+      setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+      console.log(formData);
+    },
+    [formData]
+  );
+
   return (
     <SInvoiceForm>
       <div className="container">
@@ -40,64 +47,64 @@ const InvoiceForm = () => {
           <div className="from bill">
             <p>Bill From</p>
             <div className="street sec">
-              <label htmlFor="street">Street Address</label>
+              <label htmlFor="streetAddress">Street Address</label>
 
-              <input type="text" id="street" />
+              <input type="text" id="streetAddress" onChange={onChange}/>
             </div>
 
             <div className="zone">
               <div className="city sec">
                 <label htmlFor="city">City</label>
-                <input type="text" id="city" />
+                <input type="text" id="city" onChange={onChange}/>
               </div>
 
               <div className="code sec">
-                <label htmlFor="code">Post Code</label>
-                <input type="text" id="code" />
+                <label htmlFor="postalCode">Post Code</label>
+                <input type="text" id="postalCode" onChange={onChange}/>
               </div>
             </div>
 
             <div className="country sec">
               <label htmlFor="country">Country</label>
-              <input type="text" id="country" />
+              <input type="text" id="country" onChange={onChange}/>
             </div>
           </div>
 
           <div className="to bill">
             <p>Bill To</p>
             <div className="name sec">
-              <label htmlFor="name">Client's Name</label>
+              <label htmlFor="clName">Client's Name</label>
 
-              <input type="text" id="name" />
+              <input type="text" id="clName" onChange={onChange}/>
             </div>
 
             <div className="email sec">
-              <label htmlFor="email">Client's Email</label>
+              <label htmlFor="clEmail">Client's Email</label>
 
-              <input type="email" id="email" />
+              <input type="email" id="clEmail" onChange={onChange}/>
             </div>
 
             <div className="clStreet sec">
-              <label htmlFor="clStreet">Street Address</label>
+              <label htmlFor="clAddress">Street Address</label>
 
-              <input type="text" id="clStreet" />
+              <input type="text" id="clAddress" onChange={onChange}/>
             </div>
 
             <div className="zone">
               <div className="clCity sec">
                 <label htmlFor="clCity">City</label>
-                <input type="text" id="clCity" />
+                <input type="text" id="clCity" onChange={onChange}/>
               </div>
 
               <div className="clCode sec">
-                <label htmlFor="clCode">Post Code</label>
-                <input type="text" id="clCode" />
+                <label htmlFor="clPostalCode">Post Code</label>
+                <input type="text" id="clPostalCode" onChange={onChange}/>
               </div>
             </div>
 
             <div className="clCountry sec">
               <label htmlFor="clCountry">Country</label>
-              <input type="text" id="clCountry" />
+              <input type="text" id="clCountry" onChange={onChange}/>
             </div>
           </div>
 
@@ -105,22 +112,22 @@ const InvoiceForm = () => {
             <div className="invDate">
               <label htmlFor="invoiceDate">Invoice Date</label>
 
-              <input type="date" id="invoiceDate" />
+              <input type="date" id="invoiceDate" onChange={onChange}/>
             </div>
 
             <div className="terms">
-              <label htmlFor="terms">
+              <label htmlFor="paymentTerms">
                 Payment Terms
                 <p>(IN DAYS)</p>
               </label>
 
-              <input type="number" max="30" min="1" id="terms" />
+              <input type="number" max="30" min="1" id="paymentTerms" onChange={onChange}/>
             </div>
 
             <div className="proDesc">
-              <label htmlFor="description">Project / Description</label>
+              <label htmlFor="desc">Project / Description</label>
 
-              <input type="text" id="description" />
+              <input type="text" id="desc" onChange={onChange}/>
             </div>
           </div>
 
