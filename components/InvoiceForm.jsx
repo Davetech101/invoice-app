@@ -135,18 +135,18 @@ const InvoiceForm = () => {
             <div className="itName sec">
               <label htmlFor="itName">Item Name</label>
 
-              <input type="text" id="itName" />
+              <input type="text" id="itName" onChange={onChange}/>
             </div>
 
             <div className="math">
               <div className="qty sec">
                 <label htmlFor="qty">Qty.</label>
-                <input type="text" id="qty" />
+                <input type="text" id="qty" onChange={onChange}/>
               </div>
 
               <div className="price sec">
                 <label htmlFor="price">Price</label>
-                <input type="number" id="price" />
+                <input type="number" id="price" onChange={onChange}/>
               </div>
 
               <div className="total sec">
